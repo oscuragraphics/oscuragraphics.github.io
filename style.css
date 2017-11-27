@@ -1,24 +1,54 @@
+@font-face {
+    font-family: "Capsule Pro";
+    src: url('./assets/CapsulePro.OTF');
+}
+
 * {
+    font-family: "Capsule Pro";
     box-sizing: border-box;
 }
 
-html, body, .main {
-    height: 100%;
-    max-height: 100%;
-}
-
-body {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-.main {
+html, body {
+    height: 95%;
     background-color: black;
-    
+    text-align: center;
 }
 
-h1, h3 {
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.main-logo {
+    max-height: 350px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.subheading {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.subheading:before {
+    content: '|\ ';
+}
+.subheading:after {
+    content: '\ |';
+}
+
+
+/* h1, h3 {
     margin: 0;
     color: white;
 }
@@ -28,7 +58,3 @@ h1 {
     padding-bottom: 20px;
 }
 
-.main-logo {
-    height: 50%;
-    width: auto;
-}
