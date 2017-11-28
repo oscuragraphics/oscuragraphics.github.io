@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-html, body {
+html, body, .main {
     height: 95%;
     background-color: black;
     text-align: center;
@@ -24,6 +24,19 @@ html, body {
     width: 80%;
     height: 80%;
     margin: auto;
+    color: white;
+}
+
+#home {
+    display: block;
+}
+
+#design {
+    display: none;
+}
+
+#advertising {
+    display: none;
 }
 
 .main-logo {
@@ -33,7 +46,6 @@ html, body {
 }
 
 .subheading {
-    color: white;
     margin: 0;
     font-size: 20px;
     font-weight: 400;
@@ -43,18 +55,22 @@ html, body {
 .subheading:before {
     content: '|\ ';
 }
+
 .subheading:after {
     content: '\ |';
 }
 
-
-/* h1, h3 {
-    margin: 0;
-    color: white;
+.anchor {
+    transition: all 2s;
+    color: inherit;
+    text-decoration: none;
 }
 
-h1 {
-    padding-top: 150px;
-    padding-bottom: 20px;
+.anchor:hover {
+    font-size: 25px;
+    font-weight: bold;
 }
 
+.separator:after {
+    content: '\ &\ ';
+}
