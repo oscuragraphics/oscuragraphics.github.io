@@ -136,13 +136,12 @@ html, body, .app-container{
     width: 400px;
     height: 400px;
     top: 0;
-    /* left: 30%; */
     left: calc(50% - 200px);
     z-index: 2;
 }
 
 .card-container:hover .card-popup .card-title {
-    transition: visibility 1s ease 0.5s;
+    transition: visibility 1s ease 1s;
     visibility: visible;
 }
 
