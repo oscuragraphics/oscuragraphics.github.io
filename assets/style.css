@@ -1,0 +1,189 @@
+/** General Document Rules */
+@font-face {
+    font-family: "Condensed Walkway";
+    src: url('WalkwayCondensedSemiBold.ttf');
+}
+
+* {
+    font-family: "Condensed Walkway";
+    box-sizing: border-box;
+}
+
+html, body, .app-container{
+    height: 95%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+/* Layout Classes */
+.content {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.main-logo {
+    max-height: 350px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+/* Flex Classes */
+.flex-parent {
+    display: flex;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+} 
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-spaced-evenly {
+    justify-content: space-evenly;
+}
+
+.flex-dynamic-child {
+    flex: 1 1 auto;
+}
+
+.flex-static-child {
+    flex: 0 0 auto;
+}
+
+/** Heading Classes */
+.heading {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.subheading {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.decorated:before {
+    content: '|\ ';
+}
+
+.decorated:after {
+    content: '\ |';
+}
+
+.separator:after {
+    content: '\ &\ ';
+}
+
+/** List classes */
+.listing {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+/** Card Classes */
+.card {
+    /* position: relative; */
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+}
+
+.card-title {
+    margin-top: 5px;
+}
+
+.card-popup {
+    visibility: hidden;
+    background-color: red;
+    transition: width 1s ease, height 1s ease;
+    width: 0;
+    height: 0;
+}
+
+.card-text-container {
+    position: relative;
+}
+
+.card-popup .card-title {
+    visibility: hidden;
+}
+
+.card-popup .card-text {
+    position: absolute;
+    top: 400px;
+    left: -999em;
+    visibility: hidden;
+}
+
+.card-container:hover .card {
+    background-color: rgba(255, 0, 0, 0.4)    
+}
+
+.card-container:hover .card-popup {
+    visibility: visible;
+    border: 1px solid white;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+}
+
+.card-container:hover .card-popup .card-title {
+    transition: visibility 1s ease 0.5s;
+    visibility: visible;
+}
+
+.card-container:hover .card-popup .card-text {
+    transition: top 1s ease 0.5s;
+    top: 0px;
+    left: 0px;
+    visibility: visible;
+}
+
+/** Navigation anchors classes */
+.anchor {
+    transition: font-size 2s;
+    color: inherit;
+    text-decoration: none;
+}
+
+.anchor:hover {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/** Misc Classes */
+.shadow-box__right {
+    box-shadow: 3px 3px 5px rgba(222, 224, 226, 0.4);
+}
+
+.shadow-box {
+    box-shadow: -3px 3px 5px rgba(222, 224, 226, 0.4);
+}
+
+.shadow-text {
+    text-shadow: 3px 3px 1px rgba(222, 224, 226, 0.4)
+}
+
+/** View-specific styles */
+#home {
+    display: block;
+}
+
+#design {
+    display: none;
+}
+
+#advertising {
+    display: none;
+}

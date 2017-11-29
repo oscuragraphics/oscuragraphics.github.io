@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <link rel="canonical" href="http://www.oscuragraphics.info">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/assets/style.css">
         
         <!-- OG Tags -->
         <meta property="og:title" content="OSCURA | Diseño & Publicidad">
@@ -25,14 +25,16 @@
         <meta name="twitter:title" content="OSCURA | Diseño & Publicidad">
         <meta name="twitter:image" content="http://www.oscuragraphics.info/assets/Logo.png">
         <meta name="twitter:creator" content="@0scura_1122">
-
     </head>
 
     <body>
-        <div class="main">
+        <div class="app-container flex-parent flex-center">
+            <!-- Home View -->
             <div id="home" class="content">
-                <img class="main-logo" src="assets/Logo.png">
-                <h1 class="subheading">
+                <h1 title="Oscura">
+                    <img class="main-logo shadow-box" src="assets/Logo.png">
+                </h1>
+                <div class="subheading shadow-text decorated">
                     <a href class="anchor design">
                         Diseño
                     </a>
@@ -40,14 +42,74 @@
                     <a href class="anchor advertising">
                         Publicidad
                     </a>
-                </h1>
+                </div>
             </div>
+            
+            <!-- Design View -->
             <div id="design" class="content">
-                <h1 class="subheading">Diseño</h1>
-                <h2>Pronto...</h2>
+                <h1 class="heading decorated shadow-text">Diseño</h1>
+                <ul class="listing flex-parent flex-wrap flex-center flex-spaced-evenly">
+                    <li class="flex-static-child card-container">
+                        <div class="card shadow-box">
+                            <h2 class="subheading card-title shadow-text">Diseño Editorial</h2>
+                            <div class="card-popup shadow-box">
+                                <h2 class="subheading card-title shadow-text">Diseño Editorial</h2>
+                                <div class="card-text-container">
+                                    <p class="card-text">Sint ipsum aute do consectetur. Voluptate id sunt culpa laboris velit et eiusmod officia ipsum non cupidatat. Enim excepteur irure anim reprehenderit adipisicing veniam duis nulla ullamco consectetur. Adipisicing mollit Lorem nisi esse ad fugiat non. Dolor eu nostrud ullamco est dolor anim nostrud voluptate in ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-static-child card-container">
+                        <div class="card shadow-box">
+                            <h2 class="subheading card-title shadow-text">Producción Gráfica</h2>
+                            <div class="card-popup shadow-box">
+                                <h2 class="subheading card-title shadow-text">Producción Gráfica</h2>
+                                <div class="card-text-container">
+                                    <p class="card-text">Sint ipsum aute do consectetur. Voluptate id sunt culpa laboris velit et eiusmod officia ipsum non cupidatat. Enim excepteur irure anim reprehenderit adipisicing veniam duis nulla ullamco consectetur. Adipisicing mollit Lorem nisi esse ad fugiat non. Dolor eu nostrud ullamco est dolor anim nostrud voluptate in ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-static-child card-container">
+                        <div class="card shadow-box">
+                            <h2 class="subheading card-title shadow-text">Textos</h2>
+                            <div class="card-popup shadow-box">
+                                <h2 class="subheading card-title shadow-text">Textos</h2>
+                                <div class="card-text-container">
+                                    <p class="card-text">Sint ipsum aute do consectetur. Voluptate id sunt culpa laboris velit et eiusmod officia ipsum non cupidatat. Enim excepteur irure anim reprehenderit adipisicing veniam duis nulla ullamco consectetur. Adipisicing mollit Lorem nisi esse ad fugiat non. Dolor eu nostrud ullamco est dolor anim nostrud voluptate in ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-static-child card-container">
+                        <div class="card shadow-box">
+                            <h2 class="subheading card-title shadow-text">Infografía</h2>
+                            <div class="card-popup shadow-box">
+                                <h2 class="subheading card-title shadow-text">Infografía</h2>
+                                <div class="card-text-container">
+                                    <p class="card-text">Sint ipsum aute do consectetur. Voluptate id sunt culpa laboris velit et eiusmod officia ipsum non cupidatat. Enim excepteur irure anim reprehenderit adipisicing veniam duis nulla ullamco consectetur. Adipisicing mollit Lorem nisi esse ad fugiat non. Dolor eu nostrud ullamco est dolor anim nostrud voluptate in ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-static-child card-container">
+                        <div class="card shadow-box">
+                            <h2 class="subheading card-title shadow-text">Empaques</h2>
+                            <div class="card-popup shadow-box">
+                                <h2 class="subheading card-title shadow-text">Empaques</h2>
+                                <div class="card-text-container">
+                                    <p class="card-text">Sint ipsum aute do consectetur. Voluptate id sunt culpa laboris velit et eiusmod officia ipsum non cupidatat. Enim excepteur irure anim reprehenderit adipisicing veniam duis nulla ullamco consectetur. Adipisicing mollit Lorem nisi esse ad fugiat non. Dolor eu nostrud ullamco est dolor anim nostrud voluptate in ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+
+            <!-- Advertising View -->
             <div id="advertising" class="content">
-                <h1 class="subheading">Publicidad</h1>
+                <h1 class="subheading shadow-text">Publicidad</h1>
                 <h2>Pronto...</h2>
             </div>
         </div>
