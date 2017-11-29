@@ -21,6 +21,7 @@ html, body, .app-container{
     width: 80%;
     height: 80%;
     margin: auto;
+    position: relative;
 }
 
 .main-logo {
@@ -83,15 +84,14 @@ html, body, .app-container{
 
 /** List classes */
 .listing {
-    position: relative;
     margin-top: 50px;
     margin-bottom: 10px;
     list-style: none;
+    position: relative;
 }
 
 /** Card Classes */
 .card {
-    /* position: relative; */
     background-color: red;
     width: 200px;
     height: 200px;
@@ -120,7 +120,7 @@ html, body, .app-container{
 
 .card-popup .card-text {
     position: absolute;
-    top: 400px;
+    top: -999em;
     left: -999em;
     visibility: hidden;
 }
@@ -135,6 +135,9 @@ html, body, .app-container{
     position: absolute;
     width: 400px;
     height: 400px;
+    top: 0;
+    /* left: 30%; */
+    left: calc(50% - 200px);
     z-index: 2;
 }
 
@@ -144,7 +147,8 @@ html, body, .app-container{
 }
 
 .card-container:hover .card-popup .card-text {
-    transition: top 1s ease 0.5s;
+    /* transition: top 1s ease 0.5s; */
+    transition: top 1s ease;
     top: 0px;
     left: 0px;
     visibility: visible;
