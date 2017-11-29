@@ -9,9 +9,9 @@ $(function() {
     const $advertising = $(`#${ADVERTISING}`);
     //Hash of views
     const views = {
-        [HOME]: $home,
-        [DESIGN]: $design,
-        [ADVERTISING]: $advertising
+        [HOME]: { el: $home, fn: function(){}, started: false },
+        [DESIGN]: { el: $design, fn: initDesignEvents, started: false },
+        [ADVERTISING]: { el: $advertising, fn: initAdvertisingEvents, started: false }
     };
 
     //Add Navigation Listeners
@@ -39,9 +39,14 @@ $(function() {
         viewHandle = viewHandle || HOME;
         Object.keys(views).forEach(function(key) {
             if (key === viewHandle) {
-                views[key].show();
+                var viewData = views[key];
+                viewData.el.show();
+                if (!viewData.started) {
+                    viewData.fn();
+                    viewData.started = true;
+                }
             } else {
-                views[key].hide();
+                views[key].el.hide();
             }
         });
     }
@@ -65,6 +70,17 @@ $(function() {
         if (stateData && stateData.active) {
             activateView(stateData.active);
         }
+    }
+
+    function initDesignEvents() {
+        console.log('Init Design Events');
+        $('.card-container').click(function(ev) {
+            $(this).toggleClass('active');
+        });
+    }
+
+    function initAdvertisingEvents() {
+
     }
 
     //Create the Home state

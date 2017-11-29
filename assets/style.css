@@ -125,11 +125,13 @@ html, body, .app-container{
     visibility: hidden;
 }
 
-.card-container:hover .card {
+.card-container:hover .card,
+.card-container.active .card {
     background-color: rgba(255, 0, 0, 0.4)    
 }
 
-.card-container:hover .card-popup {
+.card-container:hover .card-popup,
+.card-container.active .card-popup {
     visibility: visible;
     border: 1px solid white;
     position: absolute;
@@ -140,12 +142,14 @@ html, body, .app-container{
     z-index: 2;
 }
 
-.card-container:hover .card-popup .card-title {
+.card-container:hover .card-popup .card-title,
+.card-container.active .card-popup .card-title {
     transition: visibility 1s ease 1s;
     visibility: visible;
 }
 
-.card-container:hover .card-popup .card-text {
+.card-container:hover .card-popup .card-text,
+.card-container.active .card-popup .card-text {
     /* transition: top 1s ease 0.5s; */
     transition: top 1s ease;
     top: 0px;
