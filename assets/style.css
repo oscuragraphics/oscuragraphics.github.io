@@ -185,3 +185,82 @@ html, body, .app-container{
 #advertising {
     display: none;
 }
+
+/** PopUp Cards Specific Styles */
+@keyframes popup_design1_animation {
+    12.5% {
+        background-position: 400px 0px,
+                            400px 0px,
+                            400px 0px,
+                            0px 0px,
+                            0px 0px;
+    }
+    25% {
+        background-position: 400px 0px,
+                            400px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px;
+    }
+    37.5% {
+        background-position: 400px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px;
+    }
+    50% {
+        background-position: 0px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px;
+    }
+    62.5% {
+        background-position: 0px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px;
+    }
+    75% {
+        background-position: 400px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px;
+    }
+    87.5% {
+        background-position: 400px 0px,
+                            400px 0px,
+                            0px 0px,
+                            0px 0px,
+                            0px 0px;     
+    }
+    100% {
+        background-position: 400px 0px,
+                            400px 0px,
+                            400px 0px,
+                            0px 0px,
+                            0px 0px; 
+    }
+}
+#popup_design1 {
+    background-image: url('cats1.jpg'), 
+                      url('cats2.jpg'), 
+                      url('cats3.jpg'), 
+                      url('cats4.jpg'), 
+                      url('cats5.jpg');
+
+    background-position: 400px 0px,
+                         400px 0px,
+                         400px 0px,
+                         400px 0px,
+                         0px 0px;
+
+    background-origin: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: popup_design1_animation 20s linear infinite 2s;
+}
+
