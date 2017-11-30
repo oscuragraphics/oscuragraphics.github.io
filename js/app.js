@@ -15,19 +15,24 @@ $(function() {
     };
 
     //Add Navigation Listeners
-    $('.advertising', $home).click(navigationHandler.bind(this, ADVERTISING));
-    $('.design', $home).click(navigationHandler.bind(this, DESIGN));
+    $('.advertising', $home).click(navigationHandler(ADVERTISING));
+    $('.design', $home).click(navigationHandler(DESIGN));
     $(window).on('popstate', popStateHandler);
 
     /**
-     * Goes to the view identified by viewHandle and creates a browser history entry
+     * Takes in a viewHandle and returns a function expecting an event object
      * @param {String} viewHandle id of the view to go to.
-     * @param {Event} event event object associated with the click
+     * @returns {Function} a handler function that expects an event object
      */
-    function navigationHandler(viewHandle, event) {
-        event.preventDefault();
-        activateView(viewHandle);
-        createHistoryEntry({active: viewHandle}, viewHandle);
+    function navigationHandler(viewHandle) {
+        /**
+         * @param {Event} event event object associated with the event
+         */
+        return function(event) {
+            event.preventDefault();
+            activateView(viewHandle);
+            createHistoryEntry({active: viewHandle}, viewHandle);
+        };        
     }
 
     /**
@@ -74,8 +79,9 @@ $(function() {
 
     function initDesignEvents() {
         $('.card-container').click(function(ev) {
-            $(this).toggleClass('active');
-            killClass('.card-container', 'active', this.id);
+            var element = ev.currentTarget;
+            element.classList.toggle('active');
+            killClass('.card-container', 'active', element.id);
         });
     }
 
