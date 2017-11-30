@@ -93,9 +93,10 @@ html, body, .app-container{
 /** Card Classes */
 .card {
     background-color: red;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 350px;
     margin: 15px;
+    z-index: 1;
 }
 
 .card-title {
@@ -104,10 +105,13 @@ html, body, .app-container{
 
 .card-popup {
     visibility: hidden;
+    position: absolute;
     background-color: red;
-    transition: width 1s ease, height 1s ease;
+    transition: width 1s ease, height 1s ease, visibility 1s ease;
     width: 0;
     height: 0;
+    top: 0;
+    left: calc(50% - 200px);
 }
 
 .card-text-container {
@@ -118,44 +122,24 @@ html, body, .app-container{
     visibility: hidden;
 }
 
-.card-popup .card-text {
-    position: absolute;
-    top: -999em;
-    left: -999em;
-    visibility: hidden;
-}
-
-.card-container:hover .card,
-.card-container.active .card {
-    background-color: rgba(255, 0, 0, 0.4)    
-}
-
-.card-container:hover .card-popup,
+/* .card-container:hover .card-popup, */
 .card-container.active .card-popup {
     visibility: visible;
     border: 1px solid white;
-    position: absolute;
     width: 400px;
     height: 400px;
-    top: 0;
-    left: calc(50% - 200px);
     z-index: 2;
 }
 
-.card-container:hover .card-popup .card-title,
+/* .card-container:hover .card-popup .card-title, */
 .card-container.active .card-popup .card-title {
     transition: visibility 1s ease 1s;
     visibility: visible;
 }
 
-.card-container:hover .card-popup .card-text,
-.card-container.active .card-popup .card-text {
-    /* transition: top 1s ease 0.5s; */
-    transition: top 1s ease;
-    top: 0px;
-    left: 0px;
-    visibility: visible;
-}
+/* .card-container.active .card {
+    filter: none;
+} */
 
 /** Navigation anchors classes */
 .anchor {
@@ -180,6 +164,17 @@ html, body, .app-container{
 
 .shadow-text {
     text-shadow: 3px 3px 1px rgba(222, 224, 226, 0.4)
+}
+
+.shadow-text__black {
+    text-shadow: 3px 3px 2px black;
+}
+
+.grayscale {
+    background: url('cat.jpg');
+    background-origin: border-box;
+    background-size: cover;
+    filter: grayscale(100%);
 }
 
 /** View-specific styles */
