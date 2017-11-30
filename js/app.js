@@ -73,14 +73,33 @@ $(function() {
     }
 
     function initDesignEvents() {
-        console.log('Init Design Events');
         $('.card-container').click(function(ev) {
             $(this).toggleClass('active');
+            killClass('.card-container', 'active', this.id);
         });
     }
 
     function initAdvertisingEvents() {
 
+    }
+
+    /**
+     * 
+     * @param {String|DOMSelector} selector a valid DOMSelector string 
+     * @param {String} className name of class to remove from elements matched by selector
+     * @param {String} idToExclude id of the HTMLDOMNode to exclude from removal of the class
+     */
+    function killClass(selector, className, idToExclude) {
+        if (idToExclude) {
+            $(selector).each(function(index, element) {
+                if (element.id !== idToExclude) {
+                    element.classList.remove(className);
+                }
+            });
+        } else {
+            //Yay for implicit iteration
+           $(selector).removeClass(className); 
+        }
     }
 
     //Create the Home state
