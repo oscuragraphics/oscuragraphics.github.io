@@ -1,24 +1,63 @@
 $(function() {
+    class View {
+        constructor(selector, initFunction, name) {
+            this.name = name || selector;
+            this._el = $(`#${selector}`);
+            this._fn = initFunction;
+            this._started = false;
+        }
+
+        show() {
+            this._el.show();
+        }
+
+        hide() {
+            this._el.hide();
+        }
+
+        run() {
+            this.show();
+            if (!this._started) {
+                this._started = true;
+                this._fn(this._el);
+            }
+        }
+    }
+
+    class Views {
+        constructor(views) {
+            this._views = views;
+            views.forEach(view => {
+                this[view.name] = view._el;
+                this[`_${view.name}`] = view;
+            });
+        }
+
+        activateView(viewName) {
+            this._views.forEach(view => {
+                if (view.name === viewName) {
+                    view.run();
+                } else {
+                    view.hide();
+                }
+            });
+        }
+    }
+
     //View handles
     const HOME = 'home';
     const ADVERTISING = 'advertising';
     const DESIGN = 'design'; 
-    //Permanently cached DOM Elements.
-    const $home = $(`#${HOME}`);
-    const $design = $(`#${DESIGN}`);
-    const $advertising = $(`#${ADVERTISING}`);
-    //Hash of views
-    const views = {
-        [HOME]: { el: $home, fn: function(){}, started: false },
-        [DESIGN]: { el: $design, fn: startCards, started: false },
-        [ADVERTISING]: { el: $advertising, fn: startCards, started: false }
-    };
+    const views = new Views([
+        new View(HOME, () => {}),
+        new View(DESIGN, startCards),
+        new View(ADVERTISING, startCards)
+    ]);
 
     //Add Navigation Listeners
-    $('.advertising', $home).click(navigationHandler(ADVERTISING));
-    $('.design', $home).click(navigationHandler(DESIGN));
+    $('.advertising', views[HOME]).click(navigationHandler(ADVERTISING));
+    $('.design', views[HOME]).click(navigationHandler(DESIGN));
     $(window).on('popstate', popStateHandler);
-    //Create the Home state
     window.history.replaceState({active: HOME}, HOME);
 
     /**
@@ -27,9 +66,10 @@ $(function() {
      * @param {PopStateEvent} event popStateEvent fired by the browser's navigation buttons.
      */
     function popStateHandler(event) {
+        debugger;
         var stateData = event && event.originalEvent && event.originalEvent.state;
         if (stateData && stateData.active) {
-            activateView(stateData.active);
+            views.activateView(stateData.active);
         }
     }
 
@@ -52,33 +92,18 @@ $(function() {
          * @param {Event} event event object associated with the event
          */
         return function(event) {
+            debugger;
             event.preventDefault();
-            activateView(viewHandle);
+            views.activateView(viewHandle);
             createHistoryEntry({active: viewHandle}, viewHandle);
         };        
     }
 
-    /**
-     * Shows the view identified by viewHandle
-     * @param {String} viewHandle id of the view to activate
-     */
-    function activateView(viewHandle) {
-        views[viewHandle].el.show();
-        Object.keys(views).forEach(function(key) {
-            var view = views[key];
-            
-            if (key === viewHandle) {
-                view.el.show();
-                if (!view.started) {
-                    view.fn(view.el);
-                    view.started = true;
-                }
-            } else {
-                view.el.hide();
-            }
-        });
-    }
 
+    /**
+     * Starts the cards present within context
+     * @param {jQueryElement} context 
+     */
     function startCards(context) {
         var cardElements = $('.card-container', context);
         cardElements.click(function(ev) {
