@@ -100,7 +100,8 @@ html, body, .app-container{
 }
 
 .card-title {
-    margin-top: 5px;
+    padding-top: 5px;
+    height: 57px;
 }
 
 .card-popup {
@@ -118,7 +119,8 @@ html, body, .app-container{
     visibility: hidden;
 }
 
-.card-container.active .card {
+.card-container.active .card,
+.card-container:hover .card {
     filter: sepia(80%);
 }
 
