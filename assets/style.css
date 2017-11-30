@@ -114,15 +114,14 @@ html, body, .app-container{
     left: calc(50% - 200px);
 }
 
-.card-text-container {
-    position: relative;
-}
-
 .card-popup .card-title {
     visibility: hidden;
 }
 
-/* .card-container:hover .card-popup, */
+.card-container.active .card {
+    filter: sepia(80%);
+}
+
 .card-container.active .card-popup {
     visibility: visible;
     border: 1px solid white;
@@ -131,15 +130,10 @@ html, body, .app-container{
     z-index: 2;
 }
 
-/* .card-container:hover .card-popup .card-title, */
 .card-container.active .card-popup .card-title {
     transition: visibility 1s ease 1s;
     visibility: visible;
 }
-
-/* .card-container.active .card {
-    filter: none;
-} */
 
 /** Navigation anchors classes */
 .anchor {
