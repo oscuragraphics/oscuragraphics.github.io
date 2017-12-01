@@ -119,6 +119,16 @@ html, body, .app-container{
     visibility: hidden;
 }
 
+.card-popup .slider-control {
+    width: 50px;
+    height: 32px;
+    position: absolute;
+    background-color: gray;
+    padding-top: 6px;
+    cursor: pointer;
+    top: calc(50% - 16px);
+}
+
 .card-container.active .card,
 .card-container:hover .card {
     filter: sepia(80%);
@@ -136,6 +146,20 @@ html, body, .app-container{
     transition: visibility 1s ease 1s;
     visibility: visible;
 }
+
+.slider-control.left {
+    left: -15px;
+}
+
+.slider-control.right {
+    right: -15px;
+}
+
+/* .card-container.active .card-popup .slider-control {
+    //
+} */
+
+
 
 /** Navigation anchors classes */
 .anchor {
@@ -186,8 +210,27 @@ html, body, .app-container{
     display: none;
 }
 
+@keyframes slideAnimation {
+    from {
+        background-position: 400px 0, 0 0;
+    }
+    to {
+        background-position: 0 0, 0 0;
+    }
+}
+
+.animateBackground {
+    animation: slideAnimation 1s linear;
+    background-origin: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: popup_design1_animation 20s linear infinite 2s;
+    animation-direction: alternate;
+}
+
+
 /** PopUp Cards Specific Styles */
-@keyframes popup_design1_animation {
+/* @keyframes popup_design1_animation {
     0% {
         background-position: 400px 0px,
                             400px 0px,
@@ -244,4 +287,4 @@ html, body, .app-container{
     animation: popup_design1_animation 20s linear infinite 2s;
     animation-direction: alternate;
 }
-
+ */

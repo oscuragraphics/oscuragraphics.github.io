@@ -1,10 +1,11 @@
 $(function() {
     class View {
-        constructor(selector, initFunction, name) {
+        constructor(selector, initFunction, images, name) {
             this.name = name || selector;
             this._el = $(`#${selector}`);
             this._fn = initFunction;
             this._started = false;
+            this._images = images;
         }
 
         show() {
@@ -21,6 +22,7 @@ $(function() {
                 this._started = true;
                 this._fn(this._el);
             }
+            window.location.hash = this.name;
         }
     }
 
@@ -44,10 +46,12 @@ $(function() {
         }
     }
 
+    
     //View handles
     const HOME = 'home';
     const ADVERTISING = 'advertising';
     const DESIGN = 'design'; 
+    const DESIGN_IMAGES = ['cats1.jpg', 'cats2.jpg', 'cats3.jpg', 'cats4.jpg', 'cats5.jpg'];
     const views = new Views([
         new View(HOME, () => {}),
         new View(DESIGN, startCards),
@@ -59,6 +63,7 @@ $(function() {
     $('.design', views[HOME]).click(navigationHandler(DESIGN));
     $(window).on('popstate', popStateHandler);
     window.history.replaceState({active: HOME}, HOME);
+    
 
     /**
      * Handles the navigation events from the browser buttons:
@@ -66,7 +71,6 @@ $(function() {
      * @param {PopStateEvent} event popStateEvent fired by the browser's navigation buttons.
      */
     function popStateHandler(event) {
-        debugger;
         var stateData = event && event.originalEvent && event.originalEvent.state;
         if (stateData && stateData.active) {
             views.activateView(stateData.active);
@@ -92,7 +96,6 @@ $(function() {
          * @param {Event} event event object associated with the event
          */
         return function(event) {
-            debugger;
             event.preventDefault();
             views.activateView(viewHandle);
             createHistoryEntry({active: viewHandle}, viewHandle);
@@ -102,7 +105,7 @@ $(function() {
 
     /**
      * Starts the cards present within context
-     * @param {jQueryElement} context 
+     * @param {jQueryElement} context the context in which to query the card elements and bind the click event
      */
     function startCards(context) {
         var cardElements = $('.card-container', context);
@@ -110,6 +113,20 @@ $(function() {
             var element = ev.currentTarget;
             element.classList.toggle('active');
             killClass(cardElements, 'active', element.id);
+            initImageSlider();
+        });
+    }
+
+    function initImageSlider() {
+        $('.slider-control.right').click((ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            console.log('Right');
+        });
+        $('.slider-control.left').click((ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            console.log('Left');
         });
     }
 
