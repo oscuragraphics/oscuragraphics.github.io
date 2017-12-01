@@ -140,6 +140,10 @@ html, body, .app-container{
     width: 400px;
     height: 400px;
     z-index: 2;
+    background-origin: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 400px 0px, 0px 0px;
 }
 
 .card-container.active .card-popup .card-title {
@@ -194,20 +198,16 @@ html, body, .app-container{
 
 @keyframes slideAnimation {
     from {
-        background-position: 400px 0, 0 0;
+        background-position: 400px 0px, 0px 0px;
     }
     to {
-        background-position: 0 0, 0 0;
+        background-position: 0px 0px, 0px 0px;
     }
 }
 
-.animateBackground {
-    animation: slideAnimation 1s linear;
-    background-origin: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
-    animation: popup_design1_animation 20s linear infinite 2s;
-    animation-direction: alternate;
+.animated-background {
+    animation: slideAnimation 2s ease-in 1;
+    animation-fill-mode: forwards;
 }
 
 

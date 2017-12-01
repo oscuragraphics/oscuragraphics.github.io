@@ -1,4 +1,9 @@
+// (function(_$){
+
+// }($))
+
 $(function() {
+    debugger;
     class View {
         constructor(selector, initFunction, images, name) {
             this.name = name || selector;
@@ -103,19 +108,7 @@ $(function() {
     }
 
 
-    /**
-     * Starts the cards present within context
-     * @param {jQueryElement} context the context in which to query the card elements and bind the click event
-     */
-    function startCards(context) {
-        var cardElements = $('.card-container', context);
-        cardElements.click(function(ev) {
-            var element = ev.currentTarget;
-            element.classList.toggle('active');
-            killClass(cardElements, 'active', element.id);
-            initImageSlider();
-        });
-    }
+    
 
     function initImageSlider() {
         $('.slider-control.right').click((ev) => {
@@ -130,18 +123,5 @@ $(function() {
         });
     }
 
-    /**
-     * Removes the given className from Elements matching selector.
-     * If idToExclude is supplied, the class won't be removed from the Element with that id 
-     * @param {Element} elements a collection of Elements 
-     * @param {String} className name of class to remove from elements matched by selector
-     * @param {String} idToExclude id of the Element to exclude from removal of the class
-     */
-    function killClass(elements, className, idToExclude) {
-        elements.each(function(index, element) {
-            if (element.id !== idToExclude) {
-                element.classList.remove(className);
-            }
-        });
-    }
+    
 });
