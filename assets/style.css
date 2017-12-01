@@ -206,8 +206,8 @@ html, body, .app-container{
 }
 
 .animated-background {
-    animation: slideAnimation 2s ease-in 1;
-    animation-fill-mode: forwards;
+    animation: slideAnimation 2s linear 1;
+    animation-fill-mode: both;
 }
 
 

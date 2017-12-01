@@ -68,7 +68,11 @@ $(function() {
             .click(function(event) {
                 event.stopPropagation();
                 element.addClass('animated-background');
-                slidesAsCSSRule(element, ++visible, contents);
+                setTimeout(function() {
+                    element.removeClass('animated-background');
+                    slidesAsCSSRule(element, ++visible, contents);
+                }, 2000);
+                // slidesAsCSSRule(element, ++visible, contents);
             });
         // var $rightControl = $('.slider-control.right', element)
         //     .click(function(event) {
