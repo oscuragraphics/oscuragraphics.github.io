@@ -155,11 +155,6 @@ html, body, .app-container{
     right: -15px;
 }
 
-/* .card-container.active .card-popup .slider-control {
-    //
-} */
-
-
 
 /** Navigation anchors classes */
 .anchor {
@@ -195,19 +190,6 @@ html, body, .app-container{
     background-origin: border-box;
     background-size: cover;
     filter: grayscale(100%);
-}
-
-/** View-specific styles */
-#home {
-    display: block;
-}
-
-#design {
-    display: none;
-}
-
-#advertising {
-    display: none;
 }
 
 @keyframes slideAnimation {

@@ -59,10 +59,10 @@ $(function() {
     ]);
 
     //Add Navigation Listeners
-    $('.advertising', views[HOME]).click(navigationHandler(ADVERTISING));
-    $('.design', views[HOME]).click(navigationHandler(DESIGN));
-    $(window).on('popstate', popStateHandler);
-    window.history.replaceState({active: HOME}, HOME);
+    // $('.advertising', views[HOME]).click(navigationHandler(ADVERTISING));
+    // $('.design', views[HOME]).click(navigationHandler(DESIGN));
+    // $(window).on('popstate', popStateHandler);
+    // window.history.replaceState({active: HOME}, HOME);
     
 
     /**
