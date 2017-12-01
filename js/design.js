@@ -71,17 +71,23 @@ $(function() {
             
             $leftControl.click(function(event) {
                     event.stopPropagation();
+                    element.removeClass('animation-reverse');
                     element.addClass('animated-background');
                     setTimeout(function() {
                         element.removeClass('animated-background');
                         slidesAsCSSRule(element, ++visible, contents);
                     }, 2000);
-                    // slidesAsCSSRule(element, ++visible, contents);
                 });
-            // var $rightControl = $('.slider-control.right', element)
-            //     .click(function(event) {
-            //         event.stopPropagation();
-            //     });
+
+            $rightControl.click(function(event) {
+                event.stopPropagation();
+                element.addClass('animation-reverse');
+                element.addClass('animated-background');
+                setTimeout(function() {
+                    element.removeClass('animated-background');
+                    slidesAsCSSRule(element, --visible, contents);
+                }, 200);
+            })
         } else {
             $leftControl.hide();
             $rightControl.hide();
@@ -91,8 +97,10 @@ $(function() {
     }
 
     function slidesAsCSSRule(element, visibleIndex, contents) {
-        debugger;
-        var value = `url('${contents[visibleIndex + 1]}'), url('${contents[visibleIndex]}')`;
+        var current, next;
+        current = visibleIndex % contents.length;
+        next = (visibleIndex + 1) % contents.length;
+        var value = `url('${contents[next]}'), url('${contents[current]}')`;
         element.css({'background-image': value})
     }
 

@@ -210,6 +210,10 @@ html, body, .app-container{
     animation-fill-mode: both;
 }
 
+.animation-reverse {
+    animation-direction: reverse;
+}
+
 
 /** PopUp Cards Specific Styles */
 /* @keyframes popup_design1_animation {
