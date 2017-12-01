@@ -13,7 +13,7 @@ $(function() {
         },
         graphicProduction: {
             contents: [
-                
+                '/assets/cats1.jpg'
             ]
         },
         texts: {
@@ -58,32 +58,51 @@ $(function() {
     }
 
     function initImageSlider(element) {
+        debugger;
         var category = categories[element.data('category')];
         var contents = category.contents;
-        var visible = 0;
-        
-        slidesAsCSSRule(element, visible, contents);
-        
-        var $leftControl = $('.slider-control.left', element)
-            .click(function(event) {
-                event.stopPropagation();
-                element.addClass('animated-background');
-                setTimeout(function() {
-                    element.removeClass('animated-background');
-                    slidesAsCSSRule(element, ++visible, contents);
-                }, 2000);
-                // slidesAsCSSRule(element, ++visible, contents);
-            });
-        // var $rightControl = $('.slider-control.right', element)
-        //     .click(function(event) {
-        //         event.stopPropagation();
-        //     });
+        var $leftControl = $('.slider-control.left', element);
+        var $rightControl = $('.slider-control.right', element);
+
+        if (contents.length > 1) {
+            var visible = 0;
+            
+            slidesAsCSSRule(element, visible, contents);
+            
+            $leftControl.click(function(event) {
+                    event.stopPropagation();
+                    element.addClass('animated-background');
+                    setTimeout(function() {
+                        element.removeClass('animated-background');
+                        slidesAsCSSRule(element, ++visible, contents);
+                    }, 2000);
+                    // slidesAsCSSRule(element, ++visible, contents);
+                });
+            // var $rightControl = $('.slider-control.right', element)
+            //     .click(function(event) {
+            //         event.stopPropagation();
+            //     });
+        } else {
+            $leftControl.hide();
+            $rightControl.hide();
+
+            singleSlideAsCSSRule(element, contents);
+        }
     }
 
     function slidesAsCSSRule(element, visibleIndex, contents) {
         debugger;
         var value = `url('${contents[visibleIndex + 1]}'), url('${contents[visibleIndex]}')`;
         element.css({'background-image': value})
+    }
+
+    function singleSlideAsCSSRule(element, contents) {
+        var value = `url('${contents[0]}')`;
+        var positionValue = '0px 0px';
+        element.css({
+            'background-image': value,
+            'background-position': positionValue
+        });
     }
 
 });
