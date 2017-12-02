@@ -118,10 +118,14 @@ html, body, .app-container{
     height: 57px;
 }
 
+.popup-card-title {
+    padding-top: 5px;
+}
 .card-popup {
     visibility: hidden;
     position: absolute;
-    background-color: rgb(57, 57, 58);
+    /* background-color: rgb(57, 57, 58); */
+    background-color: black;
     transition: width 1s ease, height 1s ease, visibility 1s ease;
     width: 0;
     height: 0;
@@ -233,10 +237,17 @@ html, body, .app-container{
     right: -15px;
 } */
 
+
+/** Slick Slider Styles */
 .slick-slide {
     display: flex !important;
     height: 400px !important;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.slick-arrow {
+    opacity: 1;
+    text-shadow: 3px 3px 2px black;
 }
