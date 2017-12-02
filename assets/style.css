@@ -119,16 +119,6 @@ html, body, .app-container{
     visibility: hidden;
 }
 
-.card-popup .slider-control {
-    width: 50px;
-    height: 32px;
-    position: absolute;
-    background-color: gray;
-    padding-top: 6px;
-    cursor: pointer;
-    top: calc(50% - 16px);
-}
-
 .card-container.active .card,
 .card-container:hover .card {
     filter: sepia(80%);
@@ -140,10 +130,6 @@ html, body, .app-container{
     width: 400px;
     height: 400px;
     z-index: 2;
-    background-origin: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 400px 0px, 0px 0px;
 }
 
 .card-container.active .card-popup .card-title {
@@ -151,14 +137,10 @@ html, body, .app-container{
     visibility: visible;
 }
 
-.slider-control.left {
-    left: -15px;
+.slide-image > img {
+    width: 400px;
+    height: 400px;
 }
-
-.slider-control.right {
-    right: -15px;
-}
-
 
 /** Navigation anchors classes */
 .anchor {
@@ -195,7 +177,7 @@ html, body, .app-container{
     background-size: cover;
     filter: grayscale(100%);
 }
-
+/* 
 @keyframes slideAnimation {
     from {
         background-position: 400px 0px, 0px 0px;
@@ -213,64 +195,24 @@ html, body, .app-container{
 .animation-reverse {
     animation-direction: reverse;
 }
-
-
-/** PopUp Cards Specific Styles */
-/* @keyframes popup_design1_animation {
-    0% {
-        background-position: 400px 0px,
-                            400px 0px,
-                            400px 0px,
-                            400px 0px,
-                            0px 0px;
-    }
-    25% {
-        background-position: 400px 0px,
-                            400px 0px,
-                            400px 0px,
-                            0px 0px,
-                            0px 0px;
-    }
-    50% {
-        background-position: 400px 0px,
-                            400px 0px,
-                            0px 0px,
-                            0px 0px,
-                            0px 0px;
-    }
-    75% {
-        background-position: 400px 0px,
-                            0px 0px,
-                            0px 0px,
-                            0px 0px,
-                            0px 0px;
-    }
-    100% {
-        background-position: 0px 0px,
-                            0px 0px,
-                            0px 0px,
-                            0px 0px,
-                            0px 0px;
-    }
-}
-
-#popup_design1 {
-    background-image: url('cats1.jpg'), 
-                      url('cats2.jpg'), 
-                      url('cats3.jpg'), 
-                      url('cats4.jpg'), 
-                      url('cats5.jpg');
-
-    background-position: 400px 0px,
-                         400px 0px,
-                         400px 0px,
-                         400px 0px,
-                         0px 0px;
-
-    background-origin: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
-    animation: popup_design1_animation 20s linear infinite 2s;
-    animation-direction: alternate;
-}
  */
+
+ /* .card-popup .slider-control {
+    width: 50px;
+    height: 32px;
+    position: absolute;
+    background-color: gray;
+    padding-top: 6px;
+    cursor: pointer;
+    top: calc(50% - 16px);
+} */
+
+/* .slider-control.left {
+    left: -15px;
+}
+
+.slider-control.right {
+    right: -15px;
+} */
+
+

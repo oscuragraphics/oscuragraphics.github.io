@@ -1,37 +1,5 @@
 $(function() {
     const $cardElements = $('.card-container');
-    const categories = {
-        editorialDesign : {
-            name: 'Diseño Editorial',
-            contents: [
-                '/assets/cats1.jpg',
-                '/assets/cats2.jpg', 
-                '/assets/cats3.jpg', 
-                '/assets/cats4.jpg', 
-                '/assets/cats5.jpg'
-            ]
-        },
-        graphicProduction: {
-            contents: [
-                '/assets/cats1.jpg'
-            ]
-        },
-        texts: {
-            contents: [
-                
-            ]
-        },
-        infographics: {
-            contents: [
-                
-            ]
-        },
-        packaging : {
-            contents: [
-                
-            ]
-        }
-    };
 
     $cardElements.click(function(ev) {
         var $element = $(this);
@@ -39,8 +7,19 @@ $(function() {
         
         $element.toggleClass('active');
         killClass($cardElements, 'active', this.id);
-        initImageSlider($popUpCard);
+        initSlider($popUpCard);
     });
+
+    function initSlider($element) {
+        var $slides = $('.slide-image', $element);
+        // $slides.show();
+        $('.slider', $element).slick({
+            draggable: false, 
+            accessibility: true,
+            variableWidth: true
+        });
+        $cardElements.off('click');
+    }
 
     /**
      * Removes the given className from Elements matching selector.
@@ -57,60 +36,60 @@ $(function() {
         });
     }
 
-    function initImageSlider(element) {
-        debugger;
-        var category = categories[element.data('category')];
-        var contents = category.contents;
-        var $leftControl = $('.slider-control.left', element);
-        var $rightControl = $('.slider-control.right', element);
+    // function initImageSlider(element) {
+    //     debugger;
+    //     var category = categories[element.data('category')];
+    //     var contents = category.contents;
+    //     var $leftControl = $('.slider-control.left', element);
+    //     var $rightControl = $('.slider-control.right', element);
 
-        if (contents.length > 1) {
-            var visible = 0;
+    //     if (contents.length > 1) {
+    //         var visible = 0;
             
-            slidesAsCSSRule(element, visible, contents);
+    //         slidesAsCSSRule(element, visible, contents);
             
-            $leftControl.click(function(event) {
-                    event.stopPropagation();
-                    element.removeClass('animation-reverse');
-                    element.addClass('animated-background');
-                    setTimeout(function() {
-                        element.removeClass('animated-background');
-                        slidesAsCSSRule(element, ++visible, contents);
-                    }, 2000);
-                });
+    //         $leftControl.click(function(event) {
+    //                 event.stopPropagation();
+    //                 element.removeClass('animation-reverse');
+    //                 element.addClass('animated-background');
+    //                 setTimeout(function() {
+    //                     element.removeClass('animated-background');
+    //                     slidesAsCSSRule(element, ++visible, contents);
+    //                 }, 2000);
+    //             });
 
-            $rightControl.click(function(event) {
-                event.stopPropagation();
-                element.addClass('animation-reverse');
-                element.addClass('animated-background');
-                setTimeout(function() {
-                    element.removeClass('animated-background');
-                    slidesAsCSSRule(element, --visible, contents);
-                }, 200);
-            })
-        } else {
-            $leftControl.hide();
-            $rightControl.hide();
+    //         $rightControl.click(function(event) {
+    //             event.stopPropagation();
+    //             element.addClass('animation-reverse');
+    //             element.addClass('animated-background');
+    //             setTimeout(function() {
+    //                 element.removeClass('animated-background');
+    //                 slidesAsCSSRule(element, --visible, contents);
+    //             }, 200);
+    //         })
+    //     } else {
+    //         $leftControl.hide();
+    //         $rightControl.hide();
 
-            singleSlideAsCSSRule(element, contents);
-        }
-    }
+    //         singleSlideAsCSSRule(element, contents);
+    //     }
+    // }
 
-    function slidesAsCSSRule(element, visibleIndex, contents) {
-        var current, next;
-        current = visibleIndex % contents.length;
-        next = (visibleIndex + 1) % contents.length;
-        var value = `url('${contents[next]}'), url('${contents[current]}')`;
-        element.css({'background-image': value})
-    }
+    // function slidesAsCSSRule(element, visibleIndex, contents) {
+    //     var current, next;
+    //     current = visibleIndex % contents.length;
+    //     next = (visibleIndex + 1) % contents.length;
+    //     var value = `url('${contents[next]}'), url('${contents[current]}')`;
+    //     element.css({'background-image': value})
+    // }
 
-    function singleSlideAsCSSRule(element, contents) {
-        var value = `url('${contents[0]}')`;
-        var positionValue = '0px 0px';
-        element.css({
-            'background-image': value,
-            'background-position': positionValue
-        });
-    }
+    // function singleSlideAsCSSRule(element, contents) {
+    //     var value = `url('${contents[0]}')`;
+    //     var positionValue = '0px 0px';
+    //     element.css({
+    //         'background-image': value,
+    //         'background-position': positionValue
+    //     });
+    // }
 
 });
