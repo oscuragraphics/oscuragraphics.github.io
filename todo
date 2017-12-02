@@ -1,12 +1,5 @@
 TODO
--Add content to card
--Start slider on click.
-
-
--Make Slider
--Add Images
--Add Texts
--Add navigation to secondary pages
--Add Hash.
--Expand classes
--Try to take OUT jQuery.
+-Solver Slider Issue with Click Event.
+-Fix Image Ratio: Make 'em width and vertically centered.
+-Add Navigation
+-Fix Font for Slick

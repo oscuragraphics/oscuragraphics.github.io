@@ -63,11 +63,25 @@ html, body, .app-container{
     text-transform: uppercase;
 }
 
+.heading-group .heading:first-child:before,
+.heading-group .heading:last-child:after {
+    content: '|\ ';
+}
+
 .subheading {
     margin: 0;
     font-size: 25px;
     font-weight: 400;
     text-transform: uppercase;
+}
+
+.navigation-content > a,
+.navigation-content > h1 {
+    display: inline-block;
+}
+.navigation-content .heading {
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .decorated:before {
