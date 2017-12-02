@@ -106,7 +106,7 @@ html, body, .app-container{
 
 /** Card Classes */
 .card {
-    background-color: red;
+    background-color: rgb(57, 57, 58);
     width: 170px;
     height: 350px;
     margin: 15px;
@@ -121,7 +121,7 @@ html, body, .app-container{
 .card-popup {
     visibility: hidden;
     position: absolute;
-    background-color: red;
+    background-color: rgb(57, 57, 58);
     transition: width 1s ease, height 1s ease, visibility 1s ease;
     width: 0;
     height: 0;
@@ -151,9 +151,13 @@ html, body, .app-container{
     visibility: visible;
 }
 
+.slide-image {
+    display: none;
+}
+
 .slide-image > img {
     width: 400px;
-    height: 400px;
+    height: auto;
 }
 
 /** Navigation anchors classes */
@@ -229,4 +233,10 @@ html, body, .app-container{
     right: -15px;
 } */
 
-
+.slick-slide {
+    display: flex !important;
+    height: 400px !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

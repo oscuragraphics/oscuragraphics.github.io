@@ -12,10 +12,11 @@ $(function() {
 
     function initSlider($element) {
         var $slides = $('.slide-image', $element);
-        // $slides.show();
+        $slides.show();
         $('.slider', $element).slick({
             draggable: false, 
-            accessibility: true,
+            infinite: true,
+            slidesToShow: 1,
             variableWidth: true
         });
         $cardElements.off('click');
