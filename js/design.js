@@ -13,13 +13,15 @@ $(function() {
     function initSlider($element) {
         var $slides = $('.slide-image', $element);
         $slides.show();
-        $('.slider', $element).slick({
+        var $slider = $('.slider', $element).slick({
             draggable: false, 
             infinite: true,
             slidesToShow: 1,
             variableWidth: true
         });
-        $cardElements.off('click');
+        var $arrows = $('.slick-arrow', $slider).click(function(event) {
+            event.stopPropagation();
+        });
     }
 
     /**
