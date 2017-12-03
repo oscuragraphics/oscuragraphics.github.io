@@ -14,7 +14,7 @@ $(function() {
 
     function initSlider($element) {
         var $slides = $('.slide-image', $element);
-        $slides.show();
+        // $slides.show();
         if ($slides.length > 1) {
             var $slider = $('.slider', $element).slick({
                 draggable: false, 

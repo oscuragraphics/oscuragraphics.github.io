@@ -155,13 +155,35 @@ html, body, .app-container{
     visibility: visible;
 }
 
-.slide-image {
-    display: none;
+.card-container.active .card-popup .closing-button {
+    right: 0;
+    top: 6px;
+}
+.closing-button {
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
 }
 
-.slide-image > img {
-    width: 400px;
-    height: auto;
+.closing-button:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    content: 'x';
 }
 
 .card-container.active .card-popup .slide-image {
@@ -170,6 +192,17 @@ html, body, .app-container{
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.slide-image {
+    display: none;
+}
+
+.slide-image > img,
+.slide-image > video {
+    width: 400px;
+    height: auto;
+    max-height: 400px;
 }
 
 /** Navigation anchors classes */
@@ -207,44 +240,6 @@ html, body, .app-container{
     background-size: cover;
     filter: grayscale(100%);
 }
-/* 
-@keyframes slideAnimation {
-    from {
-        background-position: 400px 0px, 0px 0px;
-    }
-    to {
-        background-position: 0px 0px, 0px 0px;
-    }
-}
-
-.animated-background {
-    animation: slideAnimation 2s linear 1;
-    animation-fill-mode: both;
-}
-
-.animation-reverse {
-    animation-direction: reverse;
-}
- */
-
- /* .card-popup .slider-control {
-    width: 50px;
-    height: 32px;
-    position: absolute;
-    background-color: gray;
-    padding-top: 6px;
-    cursor: pointer;
-    top: calc(50% - 16px);
-} */
-
-/* .slider-control.left {
-    left: -15px;
-}
-
-.slider-control.right {
-    right: -15px;
-} */
-
 
 /** Slick Slider Styles */
 .slick-slide,
@@ -256,7 +251,8 @@ html, body, .app-container{
     text-align: center;
 }
 
-.slick-arrow {
+.slick-arrow,
+.closing-button {
     opacity: 1;
     text-shadow: 3px 3px 2px black;
 }
