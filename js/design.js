@@ -7,7 +7,9 @@ $(function() {
         
         $element.toggleClass('active');
         killClass($cardElements, 'active', this.id);
-        initSlider($popUpCard);
+        if ($element.hasClass('active')) {
+            initSlider($popUpCard);
+        }
     });
 
     function initSlider($element) {
