@@ -164,6 +164,14 @@ html, body, .app-container{
     height: auto;
 }
 
+.card-container.active .card-popup .slide-image {
+    display: flex !important;
+    height: 400px !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 /** Navigation anchors classes */
 .anchor {
     transition: font-size 2s;
@@ -239,7 +247,8 @@ html, body, .app-container{
 
 
 /** Slick Slider Styles */
-.slick-slide {
+.slick-slide,
+ {
     display: flex !important;
     height: 400px !important;
     align-items: center;

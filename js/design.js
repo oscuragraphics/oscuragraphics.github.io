@@ -15,15 +15,18 @@ $(function() {
     function initSlider($element) {
         var $slides = $('.slide-image', $element);
         $slides.show();
-        var $slider = $('.slider', $element).slick({
-            draggable: false, 
-            infinite: true,
-            slidesToShow: 1,
-            variableWidth: true
-        });
-        var $arrows = $('.slick-arrow', $slider).click(function(event) {
-            event.stopPropagation();
-        });
+        if ($slides.length > 1) {
+            var $slider = $('.slider', $element).slick({
+                draggable: false, 
+                infinite: true,
+                slidesToShow: 1,
+                variableWidth: true
+            });
+            var $arrows = $('.slick-arrow', $slider).click(function(event) {
+                event.stopPropagation();
+            });
+        }
+        
     }
 
     /**
