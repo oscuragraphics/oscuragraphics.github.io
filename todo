@@ -1,9 +1,8 @@
 TODO
--Use Assets
+-Fix empty state init for slider.
 -Make Card Height Responsive
 -Make Bigger Card
--Disable closing on click if slide was clicked.
--Add explicit closing X icon.
+
 -Fix video
 -Add closing animation for card title.
 -Add Hash

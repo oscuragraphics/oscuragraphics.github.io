@@ -144,14 +144,14 @@ html, body, .app-container{
 
 .card-container.active .card-popup {
     visibility: visible;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 400px;
     height: 400px;
     z-index: 2;
 }
 
 .card-container.active .card-popup .card-title {
-    transition: visibility 1s ease 1s;
+    transition: visibility 1s ease;
     visibility: visible;
 }
 
@@ -167,9 +167,9 @@ html, body, .app-container{
     width: 20px;
     height: 20px;
     padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%) rotate(45deg);
+    -ms-transform: translate(0, -50%) rotate(45deg);
+    transform: translate(0, -50%) rotate(90deg);
     cursor: pointer;
     color: transparent;
     border: none;
@@ -183,7 +183,7 @@ html, body, .app-container{
     line-height: 1;
     color: white;
     -webkit-font-smoothing: antialiased;
-    content: 'x';
+    content: '←';
 }
 
 .card-container.active .card-popup .slide-image {

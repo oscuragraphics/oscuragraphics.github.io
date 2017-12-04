@@ -3,30 +3,35 @@ $(function() {
 
     $cardElements.click(function(ev) {
         var $element = $(this);
-        var $popUpCard = $('.card-popup', $element);
         
-        $element.toggleClass('active');
         killClass($cardElements, 'active', this.id);
-        if ($element.hasClass('active')) {
-            initSlider($popUpCard);
+        if (!$element.hasClass('active')) {
+            $element.addClass('active');
+            initSlider($element);
         }
     });
 
     function initSlider($element) {
-        var $slides = $('.slide-image', $element);
-        // $slides.show();
+        var $popUpCard = $('.card-popup', $element);
+
+        var $closingButton = $('.closing-button', $popUpCard);
+        var $slides = $('.slide-image', $popUpCard);
+        var $slider = $('.slider', $popUpCard);
+
+        $closingButton.click(function(ev) {
+            ev.stopPropagation();
+            $slider.slick('unslick');
+            $element.removeClass('active');
+        });
+
         if ($slides.length > 1) {
-            var $slider = $('.slider', $element).slick({
+            $slider.slick({
                 draggable: false, 
                 infinite: true,
                 slidesToShow: 1,
                 variableWidth: true
             });
-            var $arrows = $('.slick-arrow', $slider).click(function(event) {
-                event.stopPropagation();
-            });
         }
-        
     }
 
     /**
@@ -43,61 +48,4 @@ $(function() {
             }
         });
     }
-
-    // function initImageSlider(element) {
-    //     debugger;
-    //     var category = categories[element.data('category')];
-    //     var contents = category.contents;
-    //     var $leftControl = $('.slider-control.left', element);
-    //     var $rightControl = $('.slider-control.right', element);
-
-    //     if (contents.length > 1) {
-    //         var visible = 0;
-            
-    //         slidesAsCSSRule(element, visible, contents);
-            
-    //         $leftControl.click(function(event) {
-    //                 event.stopPropagation();
-    //                 element.removeClass('animation-reverse');
-    //                 element.addClass('animated-background');
-    //                 setTimeout(function() {
-    //                     element.removeClass('animated-background');
-    //                     slidesAsCSSRule(element, ++visible, contents);
-    //                 }, 2000);
-    //             });
-
-    //         $rightControl.click(function(event) {
-    //             event.stopPropagation();
-    //             element.addClass('animation-reverse');
-    //             element.addClass('animated-background');
-    //             setTimeout(function() {
-    //                 element.removeClass('animated-background');
-    //                 slidesAsCSSRule(element, --visible, contents);
-    //             }, 200);
-    //         })
-    //     } else {
-    //         $leftControl.hide();
-    //         $rightControl.hide();
-
-    //         singleSlideAsCSSRule(element, contents);
-    //     }
-    // }
-
-    // function slidesAsCSSRule(element, visibleIndex, contents) {
-    //     var current, next;
-    //     current = visibleIndex % contents.length;
-    //     next = (visibleIndex + 1) % contents.length;
-    //     var value = `url('${contents[next]}'), url('${contents[current]}')`;
-    //     element.css({'background-image': value})
-    // }
-
-    // function singleSlideAsCSSRule(element, contents) {
-    //     var value = `url('${contents[0]}')`;
-    //     var positionValue = '0px 0px';
-    //     element.css({
-    //         'background-image': value,
-    //         'background-position': positionValue
-    //     });
-    // }
-
 });
