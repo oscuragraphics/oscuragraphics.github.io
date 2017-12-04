@@ -231,7 +231,7 @@ html, body, .app-container{
 }
 
 .shadow-text__black {
-    text-shadow: 3px 3px 2px black;
+    text-shadow: 3px 3px 1px black;
 }
 
 .grayscale {
