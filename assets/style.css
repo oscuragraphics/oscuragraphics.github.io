@@ -275,3 +275,31 @@ html, body, .app-container{
     background-color: black !important;
     opacity: 1 !important;
 }
+
+
+/* Card Specific Styles */
+#design1 .card {
+    background-image: url('/assets/design/editorialDesign/Libro2.jpg');
+    background-position: -35px;
+}
+
+#design2 .card {
+    background-image: url('/assets/design/graphicProduction/graphProd.jpg');
+    background-position: 202px;
+}
+
+#design3 .card {
+    background-image: url('/assets/design/typographicComposition/Afiche Harry Potter María Clara Trujillo.jpg');
+    background-repeat: no-repeat;
+    background-position: 0px 96px;
+}
+
+#design4 .card {
+    background-image: url('/assets/design/packaging/Caja acompañante armada.jpg');
+}
+
+#design5 .card {
+    background-image: url('/assets/design/infographics/info2.jpg');
+    background-position: -291px 98px;
+}
+
