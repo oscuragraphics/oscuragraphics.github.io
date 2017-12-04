@@ -1,8 +1,8 @@
 TODO
--Add closing animation for card title.
 -Make Card Height Responsive
 -Make Bigger Card
 -Fix empty state init for slider.
+-Add animation for image init.
 
 -Fix video
 -Add Hash

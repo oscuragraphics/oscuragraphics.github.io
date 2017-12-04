@@ -121,6 +121,7 @@ html, body, .app-container{
 .popup-card-title {
     padding-top: 5px;
 }
+
 .card-popup {
     visibility: hidden;
     position: absolute;
@@ -129,36 +130,11 @@ html, body, .app-container{
     transition: width 1s ease, height 1s ease, visibility 1s ease;
     width: 0;
     height: 0;
-    top: 0;
+    top: -40px;
     left: calc(50% - 200px);
-}
-
-.card-popup .card-title {
-    visibility: hidden;
-}
-
-.card-container.active .card,
-.card-container:hover .card {
-    filter: sepia(80%);
-}
-
-.card-container.active .card-popup {
-    visibility: visible;
     border: 1px solid white;
-    width: 400px;
-    height: 400px;
-    z-index: 2;
 }
 
-.card-container.active .card-popup .card-title {
-    transition: visibility 1s ease;
-    visibility: visible;
-}
-
-.card-container.active .card-popup .closing-button {
-    right: -8px;
-    top: 0px;
-}
 .closing-button {
     position: absolute;
     font-size: 0;
@@ -175,6 +151,8 @@ html, body, .app-container{
     border: none;
     outline: none;
     background: transparent;
+    right: -8px;
+    top: 0px;
 }
 
 .closing-button:before {
@@ -184,6 +162,31 @@ html, body, .app-container{
     color: white;
     -webkit-font-smoothing: antialiased;
     content: '←';
+}
+
+.card-container .card-popup .closing-button,
+.card-container .card-popup .card-title {
+    transition: visibility 0.5s ease;
+    transition-delay: 0s;
+    visibility: hidden;
+}
+
+
+.card-container.active .card,
+.card-container:hover .card {
+    filter: sepia(80%);
+}
+
+.card-container.active .card-popup {
+    visibility: visible;
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+}
+
+.card-container.active .card-popup .card-title,
+.card-container.active .card-popup .closing-button {
+    visibility: visible;
 }
 
 .card-container.active .card-popup .slide-image {
