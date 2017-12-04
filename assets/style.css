@@ -253,7 +253,16 @@ html, body, .app-container{
 
 .closing-button,
 .slick-arrow {
-    text-shadow: 3px 3px 2px black;
+    z-index: 2;
+    text-shadow: -3px 3px 2px rgba(222, 224, 226, 0.4);
+}
+
+.slick-prev {
+    left: -10px;
+}
+
+.slick-next {
+    right: -10px;
 }
 
 .slick-prev:before, 
