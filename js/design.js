@@ -20,8 +20,12 @@ $(function() {
 
         $closingButton.click(function(ev) {
             ev.stopPropagation();
-            $slider.slick('unslick');
-            $element.removeClass('active');
+            if ($slider.hasClass('slick-initialized')) {
+                $slider.slick('unslick');
+            }
+            if ($element.hasClass('active')){
+                $element.removeClass('active');
+            }
         });
 
         if ($slides.length > 1) {
