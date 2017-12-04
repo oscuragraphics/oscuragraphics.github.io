@@ -144,7 +144,7 @@ html, body, .app-container{
 
 .card-container.active .card-popup {
     visibility: visible;
-    /* border: 1px solid white; */
+    border: 1px solid white;
     width: 400px;
     height: 400px;
     z-index: 2;
@@ -156,8 +156,8 @@ html, body, .app-container{
 }
 
 .card-container.active .card-popup .closing-button {
-    right: 0;
-    top: 6px;
+    right: -8px;
+    top: 0px;
 }
 .closing-button {
     position: absolute;
@@ -167,9 +167,9 @@ html, body, .app-container{
     width: 20px;
     height: 20px;
     padding: 0;
-    -webkit-transform: translate(0, -50%) rotate(45deg);
-    -ms-transform: translate(0, -50%) rotate(45deg);
-    transform: translate(0, -50%) rotate(90deg);
+    -webkit-transform: translate(0, -50%) rotate(-45deg);
+    -ms-transform: translate(0, -50%) rotate(-45deg);
+    transform: translate(0, -50%) rotate(-45deg);
     cursor: pointer;
     color: transparent;
     border: none;
@@ -251,8 +251,13 @@ html, body, .app-container{
     text-align: center;
 }
 
-.slick-arrow,
-.closing-button {
-    opacity: 1;
+.closing-button,
+.slick-arrow {
     text-shadow: 3px 3px 2px black;
+}
+
+.slick-prev:before, 
+.slick-next:before, 
+.closing-button:before {
+    opacity: 1 !important;
 }

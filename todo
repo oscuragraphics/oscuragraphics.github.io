@@ -1,8 +1,9 @@
 TODO
--Fix empty state init for slider.
+-Align Shadows in PopupCard.
+-Add closing animation for card title.
 -Make Card Height Responsive
 -Make Bigger Card
+-Fix empty state init for slider.
 
 -Fix video
--Add closing animation for card title.
 -Add Hash
