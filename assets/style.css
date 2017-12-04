@@ -258,15 +258,17 @@ html, body, .app-container{
 }
 
 .slick-prev {
-    left: -10px;
+    left: -10px !important;
 }
 
 .slick-next {
-    right: -10px;
+    right: -10px !important;
 }
 
 .slick-prev:before, 
 .slick-next:before, 
 .closing-button:before {
+    border-radius: 10px;
+    background-color: black !important;
     opacity: 1 !important;
 }
