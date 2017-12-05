@@ -1,5 +1,6 @@
 TODO
 
--Add Link to image on each slide.
--Update Metatags images
 -Add Hash
+-Create page JSON
+-Make Ajax Requests
+-Create Templates instead of HTMLs
