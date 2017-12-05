@@ -1,0 +1,21 @@
+{
+    "views": {
+        "design": {
+            "id": "design",
+            "meta": {
+                "title": "OSCURA | Portafolio de Publicidad",
+                "canonicalUrl": "http://www.oscuragraphics.info/advertising.html"
+            },
+            "content": {
+                "title": "Diseño",
+                "categories": [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}
+                ]
+            }
+        }
+    }
+}
