@@ -303,3 +303,25 @@ html, body, .app-container{
     background-position: -291px 98px;
 }
 
+#advertising1 .card {
+    background-image: url('/assets/advertising/adCampaign/Publi4.jpg');
+    background-position: 217px;
+}
+
+#advertising2 .card {
+    background-image: url('/assets/advertising/branding/Bran2.jpg');
+    background-position: -50px 64px;    
+}
+
+#advertising3 .card {
+    background-image: url('/assets/advertising/brandActivation/Marca4.jpg');
+    background-repeat: no-repeat;
+    background-position: -78px 50px;
+}
+
+#advertising4 .card {
+    background-image: url('/assets/advertising/mailing/Mail2.jpg');
+    background-repeat: no-repeat;
+    background-position: -262px 56px;
+}
+

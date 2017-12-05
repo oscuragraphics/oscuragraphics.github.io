@@ -1,8 +1,10 @@
 TODO
+-Add Link to image on each slide.
+-Update Metatags images
 -Make Card Height Responsive
+
 -Make Bigger Card
 -Fix empty state init for slider.
 -Add animation for image init.
-
 -Fix video
 -Add Hash
