@@ -219,8 +219,8 @@ html, body, .app-container{
     display: none;
 }
 
-.slide-image > img,
-.slide-image > video {
+.slide-image img,
+.slide-image video {
     transition: width 0.5s ease 0.5s, height 0.5 ease 0.5s, visibility 0.5s ease;
     visibility: hidden;
     width: 0px;
@@ -229,8 +229,8 @@ html, body, .app-container{
     max-width: 400px; */
 }
 
-.card-container.active .card-popup .slide-image > img,
-.card-container.active .card-popup .slide-image > video {
+.card-container.active .card-popup .slide-image img,
+.card-container.active .card-popup .slide-image video {
     visibility: visible;
     width: auto;
     height: auto;
