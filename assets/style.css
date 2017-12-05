@@ -171,6 +171,10 @@ html, body, .app-container{
     visibility: hidden;
 }
 
+.card-container .card-popup .card-title {
+    height: auto;
+}
+
 
 .card-container.active .card,
 .card-container:hover .card {
@@ -180,7 +184,7 @@ html, body, .app-container{
 .card-container.active .card-popup {
     visibility: visible;
     width: 400px;
-    height: 400px;
+    height: auto;
     z-index: 2;
 }
 
@@ -203,9 +207,8 @@ html, body, .app-container{
 
 .slide-image > img,
 .slide-image > video {
-    width: 400px;
-    height: auto;
     max-height: 400px;
+    max-width: 400px;
 }
 
 /** Navigation anchors classes */
