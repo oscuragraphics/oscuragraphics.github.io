@@ -1,0 +1,68 @@
+<div id="{{view.id}}" class="content">
+
+    <!-- NAVIGATION -->
+        <div class="navigation-content subheading shadow-text decorated">
+            {{foreach nav in view.navigation.links}}
+                {{if nav.url}}
+                    <a class="anchor" href="{{nav.url}}">{{nav.title}}</a>
+                {{else}}
+                    <h1 class="heading">{{nav.title}}</h1>
+                {{/if}}
+            {{/foreach}}
+        </div>
+    <!-- /NAVIGATION -->
+
+    <!-- CATEGORIES -->
+        {{if view.content.categories.length > 0}}
+            <ul class="cards listing flex-parent flex-wrap flex-center flex-spaced-evenly">
+                {{foreach category in view.content.categories}}
+                    <li class="flex-static-child card-container" id="{{category.id}}">
+                    
+                        <!-- CARD -->
+                            <div class="card shadow-box grayscale">
+                                <h2 class="subheading card-title shadow-text__black">{{category.title}}</h2>
+                                <p class="card-text shadow-text__black">{{category.description}}</p>
+                            </div>
+                        <!-- /CARD -->
+
+                        <!-- POPUP -->
+                            {{if category.assets.items.length > 0}}
+                                <div class="card-popup shadow-box">
+                                    <button type="button" class="closing-button"></button>
+                                    <h2 class="subheading card-title shadow-text">{{category.title}}</h2>
+                                    <div class="slider">
+                                    <!-- SLIDES -->
+                                        {{foreach item in category.assets }}
+                                            <div class="slide-image">
+                                                <!-- VIDEOS -->
+                                                    {{if item.type === 'video'}}
+                                                         <video controls>
+                                                             <source src="/assets/{{view.id}}/{{category.id}}/{{item.file}}" type="video/mp4">
+                                                         </video>
+                                                    {{/if}}
+                                                <!-- /VIDEOS -->
+
+                                                <!-- IMAGES -->
+                                                    {{if item.linked}}
+                                                        <a href="/assets/{{view.id}}/{{category.id}}/{{item.file}}" target="_blank">
+                                                            <img src="/assets/{{view.id}}/{{category.id}}/{{item.file}}" />
+                                                        </a>
+                                                    {{else}}
+                                                        <img src="/assets/{{view.id}}/{{category.id}}/{{item.file}}" />
+                                                    {{/if}}
+                                                <!-- /IMAGES -->
+                                            </div>
+                                        {{/if}}
+                                    <!-- /SLIDES -->
+                                    </div>
+                                </div>
+                            {{/if}}
+                        <!-- /POPUP -->
+                    
+                    </li>
+                {{/foreach}}
+            </ul>
+        {{/if}}
+    <!-- /CATEGORIES -->
+
+</div>

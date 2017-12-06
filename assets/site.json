@@ -4,16 +4,48 @@
             "id": "design",
             "meta": {
                 "title": "OSCURA | Portafolio de Publicidad",
-                "canonicalUrl": "http://www.oscuragraphics.info/advertising.html"
+                "canonical": "http://www.oscuragraphics.info/advertising.html"
+            },
+            "navigation": {
+                "links": [
+                    {
+                        "title": "Home",
+                        "url": "/home"
+                    },
+                    {
+                        "title": "Publicidad",
+                        "url": "/advertising"
+                    }
+                ]
             },
             "content": {
                 "title": "Diseño",
                 "categories": [
-                    {},
-                    {},
-                    {},
-                    {},
-                    {}
+                    {
+                        "id": "editorialDesign",
+                        "title": "Diseño Editorial",
+                        "description": "Se dedica al diseño, maquetación y composición de publicaciones tales como revistas, periódicos o libros.",
+                        "assets": [
+                            { "file": "Libro1.jpg", "type": "image"},
+                            { "file": "Libro2.jpg", "type": "image"},
+                            { "file": "Periódico1.jpg", "type": "image"},
+                            { "file": "Periódico2.jpg", "type": "image"},
+                            { "file": "Plegable1.jpg", "type": "image"},
+                            { "file": "Plegable2.jpg", "type": "image"},
+                            { "file": "Revista1.jpg", "type": "image"},
+                            { "file": "Revista2.jpg", "type": "image"},
+                            { "file": "Revista3.jpg", "type": "image"},
+                            { "file": "Revista4.jpg", "type": "image"}
+                        ],
+                        "cover": {
+                            "asset": "Libro2.jog",
+                            "position": {
+                                "x": -35,
+                                "y": 0,
+                            },
+                            "repeat": false
+                        }
+                    }
                 ]
             }
         }

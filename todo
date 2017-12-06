@@ -1,6 +1,11 @@
-TODO
+#TODO
 
--Add Hash
--Create page JSON
--Make Ajax Requests
--Create Templates instead of HTMLs
+## Master
+- Optimize Images (Size)
+- Change Texts 
+
+## Development
+- Change template to a templating language
+- Complete page JSON
+- Consume JSON via Ajax
+- Create Head template
